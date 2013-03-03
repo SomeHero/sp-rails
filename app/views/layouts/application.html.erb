@@ -1,14 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Socialpayments</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+	<title>Socialpayments</title>
+	<!-- Google Analytics Content Experiment code -->
+	<script>    function utmx_section() { } function utmx() { } (function () {
+		var 
+		k = '57700319-2', d = document, l = d.location, c = d.cookie;
+		if (l.search.indexOf('utm_expid=' + k) > 0) return;
+		function f(n) {
+			if (c) {
+				var i = c.indexOf(n + '='); if (i > -1) {
+					var j = c.
+					indexOf(';', i); return escape(c.substring(i + n.length + 1, j < 0 ? c.
+						length : j))
+				} 
+			} 
+		} var x = f('__utmx'), xx = f('__utmxx'), h = l.hash; d.write(
+			'<sc' + 'ript src="' + 'http' + (l.protocol == 'https:' ? 's://ssl' :
+				'://www') + '.google-analytics.com/ga_exp.js?' + 'utmxkey=' + k +
+			'&utmx=' + (x ? x : '') + '&utmxx=' + (xx ? xx : '') + '&utmxtime=' + new Date().
+			valueOf() + (h ? '&utmxhash=' + escape(h.substr(1)) : '') +
+			'" type="text/javascript" charset="utf-8"><\/sc' + 'ript>')
+	})();
+	</script><script>             utmx('url', 'A/B');</script>
+	<!-- End of Google Analytics Content Experiment code -->
+	<meta name="description" content="At PaidThx, we believe you should be able to send and receive money whenever you want, wherever you want. Whether you owe a few bucks to a friend or want to donate to your favorite cause, it should be as simple as the swipe of a finger shouldn’t cost you a penny." />
+	<meta name="keywords" content="social payment, mobile banking, free money transfer, android, iphone, app, transfer money between friends" />
+	<meta name="google-site-verification" content="nz9dUDlSHHw-IJOKYUDjk2ERBXR_IHVTCw7ajItazKc" /> 
+	<%= stylesheet_link_tag "jquery.qtip.min.css" %>
+	<%= stylesheet_link_tag "prettyPhoto.css" %>
+	<%= stylesheet_link_tag "site", :media => "all" %>
+	
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Sans+Mono|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" type="image/x-icon" href="/Content/images/favicon.ico">
+	<%= javascript_include_tag "jquery-1.5.1.min.js" %>	
+	<%= javascript_include_tag "jquery.prettyPhoto.js" %>	
+	<%= javascript_include_tag "jquery.json-2.3.min.js" %>	
+	<%= javascript_include_tag "jquery.validate.min.js" %>	
+	<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	var trackingCode = '@System.Web.Configuration.WebConfigurationManager.AppSettings["GoogleAnalyticsKey"]';
+	_gaq.push(['_setAccount', trackingCode]);
+	_gaq.push(['_trackPageview']);
+
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
 </head>
 <body>
-
+<div id="header">
+<div id="logo-wrapper">
+	<%= image_tag "logo.gif", :alt => "PaidThx Logo" %>
+</div>
+<div id="social-icons-wrapper">
+<dl>
+<!--<dd id="social-google" class="social-icon">
+<a target="_blank" class="social-icon-link" href="https://plus.google.com/117087643073156405294/posts" title="PaidThx on Google +"></a> 
+</dd>-->
+<dd id="social-fb" class="social-icon">
+<a target="_blank" class="social-icon-link" href="http://www.facebook.com/paidthx" title="PaidThx on Facebook"></a>  
+<dd id="social-tw" class="social-icon">
+<a target="_blank" class="social-icon-link" href="http://www.twitter.com/paidthx" title="PaidThx on Twitter"></a>
+</dd>
+</dl>
+</div>
+</div>
+<div id="main">
 <%= yield %>
+</div>
+<div id="footer">
+<div id="footer-content">
+<div id="footer-menu">
+<a href="">Home</a> | <a title="Send us a note" href="mailto:info@paidthx.com">
+Contact Us</a>
+</div>
+<div id="footer-copyright">
+&copy;2012 PaidThx - All Rights Reserved
+</div>
+</div>
+</div>
+
+<!--SCRIPTS-->
+<%= javascript_include_tag "jquery.qtip.min.js" %>	
+<%= javascript_include_tag "home.js" %>	
 
 </body>
 </html>
