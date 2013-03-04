@@ -1,5 +1,6 @@
 # controller for the API
 class Api::ApiController < ApplicationController
+   skip_filter :basic_authentication
 
    API_VERSION = '1.0'
 
