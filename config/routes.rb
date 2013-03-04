@@ -1,4 +1,16 @@
 Socialpayments::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  devise_for :users
+
+  resources :applications
+
+
+  resources :beta_sign_ups
+
+
   get "home/index"
 
   # The priority is based upon order of creation:
@@ -57,4 +69,7 @@ Socialpayments::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+  # API routes
+  match '/api/betasignups' => 'api/api#signup_beta_user'
 end

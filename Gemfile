@@ -21,6 +21,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'devise'
+gem 'activeadmin'
+gem 'coffee-script-source', '~> 1.4.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
